@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Sayed Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#Interships">Interships</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <div class="text-content">
+                <h1 >Mahmoud Sayed Hassan</h1>
+                <p id="dynamic-text"></p>
+            </div>
+            <!-- Image of yourself -->
+            <img src="img/IMG_٢٠٢٤١٠٢١_١٣٤٩٠٩.jpg" alt="Mahmoud Sayed" class="profile-image">
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 >About Me</h2>
+        <p>
+            a front-end developer with knowledge of HTML, CSS, JavaScript, Bootstrap, and Angular. 
+            I am also working on some simple projects to enhance my skills and continue growing as a developer.
+        </p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <p >
+            <div class="divEducation">
+                <span > Faculty of Engineering, Al-Azhar University</span>
+                <span >(2019-2024)</span>
+            </div>
+
+           <div class="span"> System and Computer Engineering</div>
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section  sectionSkills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript & jQuery</li>
+            <li>Bootstrap</li>
+            <li>Angular</li>
+            <li>UI/UX Design</li>
+        </ul>
+    </section>
+
+    <!-- Interships     Section -->
+    <section id="Interships" class="section  Interships">
+        <h2>Interships    </h2>
+        <div class="projects">
+            <p>Front-End development and how to design websites at New Horizon Cairo (NHC)( 7/2024 – present).</p>
+            <p>Additionally, I have developed strong soft skills, including effective teamwork, through participation in an educational initiative</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Information</h2>
+        <p>
+            <strong>Mobile Number:</strong> 01202234707 <br>
+            <strong>Email Address:</strong><a href=""> mahmoudelsayedzayed2011@gmail.com</a> <br>
+            <strong>Social Media:</strong> <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> <br>
+            <strong>Social Media:</strong> <a href="https://github.com/MahmoudSayed0-code">GitHub</a> <br>
+            <strong>Art Studio Address:</strong> Cairo, Egypt
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mahmoud Sayed. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const dynamicText = document.getElementById("dynamic-text");
+        const textToDisplay = " I am a  Front-end Developer & UI/UX ";
+        let index = 0;
+        let isDeleting = false;
+    
+        function type() {
+            if (isDeleting) {
+                dynamicText.textContent = textToDisplay.slice(0, index--);
+                if (index < 0) {
+                    isDeleting = false;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, 100);
+                }
+            } else {
+                dynamicText.textContent = textToDisplay.slice(0, index++);
+                if (index === textToDisplay.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1000);
+                } else {
+                    setTimeout(type, 100);
+                }
+            }
+        }
+    
+        type(); // بدء عملية الكتابة
+    </script>
+</body>
+</html>
